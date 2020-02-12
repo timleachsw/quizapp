@@ -4,6 +4,14 @@ body {
     line-height: 1.5;
 }
 
+button.red {
+    background-color: red;
+}
+
+button.green {
+    background-color: green;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Muli', sans-serif;
     color: indigo;
