@@ -6,46 +6,47 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:600|Open+Sans:400,400i,600,600i&display=swap" rel="stylesheet">
     <link href="quiz.css" rel="stylesheet">
     <script src="username.js"></script>
+    <script src="quiz.js"></script>
 </head>
 <body>
-    <nav>
-        <img class="nav-logo" src="thinking.gif" width="50" alt="Thinking emoji" />
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-        </ul>
-    </nav>
-    <h1>Quizzical Pursuit</h1>
-    <div class="username-set">
-        <form>
-            <label>
-                What's your name?<br />
-                <input class="username-input" type="text" name="name" />
-            </label><br />
-        </form>
-        <button onclick="setUsername()">Submit</button>
-    </div>
-    <h2>Question 1</h2>
+<nav>
+    <img class="nav-logo" src="thinking.gif" width="50" alt="Thinking emoji" />
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+</nav>
+<h1>Quizzical Pursuit</h1>
+<div class="username-set">
     <form>
-        The creator of the Enigma Cypher and Machine was of what nationality?<br />
-        <label><input type="radio" name="q1answer" value="American" /> American<br /></label>
-        <label><input type="radio" name="q1answer" value="German" /> German<br /></label>
-        <label><input type="radio" name="q1answer" value="Polish" /> Polish<br /></label>
-        <label><input type="radio" name="q1answer" value="British" /> British</label>
+        <label>
+            What's your name?<br />
+            <input class="username-input" type="text" name="name" />
+        </label><br />
     </form>
-    <h2>Question 2</h2>
-    <form>
-        What is the name of the main character in &quot;Life is Strange&quot;?<br />
-        <label><input type="radio" name="q2answer" value="Victoria Chase" /> Victoria Chase<br /></label>
-        <label><input type="radio" name="q2answer" value="Stella Hill" /> Stella Hill<br /></label>
-        <label><input type="radio" name="q2answer" value="Chloe Price" /> Chloe Price<br /></label>
-        <label><input type="radio" name="q2answer" value="Maxine Caulfield" /> Maxine Caulfield</label>
-    </form>
-    <h2>Question 3</h2>
-    <form>
-        In the movie The Revenant, DiCaprio&#039;s character hunts down the killer of his son.<br />
-        <label><input type="radio" name="q3answer" value="true" /> True<br /></label>
-        <label><input type="radio" name="q3answer" value="false" /> False</label>
-    </form>
+    <button onclick="setUsername()">Submit</button>
+</div>
+<h2>Question 1</h2>
+<p>
+    The creator of the Enigma Cypher and Machine was of what nationality?<br />
+    <button class="q1 wrong">American</button><br />
+    <button class="q1 right">German</button><br />
+    <button class="q1 wrong">Polish</button><br />
+    <button class="q1 wrong">British</button>
+</p>
+<h2>Question 2</h2>
+<p>
+    What is the name of the main character in &quot;Life is Strange&quot;?<br />
+    <button class="q2 wrong">Victoria Chase</button><br />
+    <button class="q2 wrong">Stella Hill</button><br />
+    <button class="q2 wrong">Chloe Price</button><br />
+    <button class="q2 right">Maxine Caulfield</button>
+</p>
+<h2>Question 3</h2>
+<p>
+    In the movie The Revenant, DiCaprio&#039;s character hunts down the killer of his son.<br />
+    <button class="q3 right">True</button><br />
+    <button class="q3 wrong">False</button>
+</p>
 </body>
 </html>
