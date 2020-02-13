@@ -17,18 +17,43 @@ $(() => {
     console.log("API call successful")
   }, "json")
     .done(data => {
-      console.log(data);
-    });
+      // Turn each question into an HTML object
+      const questionHtmlArray = data.results.map((questionData, questionDataIndex) => {
+        // Make the wrong answer buttons
+        const answerButtons = questionData.incorrect_answers.map(answer =>
+          `<button class="q${questionDataIndex + 1} wrong">${answer}</button>`);
 
-  qNumbers
-    .map(n => {
-      $(`button.q${n + 1}`)
-        .map((buttonIndex, button) => {
-          button.onclick = () => {
-            answered[n] = buttonIndex;
-            refresh();
-          }
-        })
+        // Splice the right answer button randomly into the list
+        answerButtons.splice(
+          Math.floor(Math.random() * (answerButtons.length + 1)),
+          0,
+          `<button class="q${questionDataIndex + 1} right">${questionData.correct_answer}</button>`
+        );
+
+        return `<h2>Question ${questionDataIndex + 1}</h2>
+          <p>
+            ${questionData.question}<br />
+            ${answerButtons.join("<br />\n")}
+          </p>`
+      });
+
+      // Turn this array into one big HTML string
+      const questionsHtml = questionHtmlArray.join("");
+
+      // Set the HTML of the "questions" div to this
+      $(".questions").html(questionsHtml);
+
+      // Then set the click callbacks
+      qNumbers
+        .map(n => {
+          $(`button.q${n + 1}`)
+            .map((buttonIndex, button) => {
+              button.onclick = () => {
+                answered[n] = buttonIndex;
+                refresh();
+              }
+            })
+        });
     });
 });
 
