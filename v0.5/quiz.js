@@ -52,7 +52,7 @@ $(() => {
                 answered[n] = buttonIndex;
                 refresh();
               }
-            })
+            });
         });
     });
 });
