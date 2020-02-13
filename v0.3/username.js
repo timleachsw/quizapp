@@ -4,7 +4,6 @@ function setUsername() {
 
     // Replace form with a display of the username, but only if they've entered something
     if (username) {
-        document.getElementsByClassName("username-set")[0].innerHTML = `
-        <h2>User ${username}</h2>`;
+        document.getElementsByClassName("username-set")[0].innerHTML = `<h2>User ${username}</h2>`;
     }
 }
