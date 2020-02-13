@@ -1,0 +1,76 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+button {
+    text-decoration: none;
+    border: none;
+    background-color: mediumpurple;
+    color: white;
+    padding: 10px;
+    width: 200px;
+}
+
+button:disabled {
+    background-color: lavender;
+    color: gray;
+}
+
+button:hover {
+    background-color: indigo;
+}
+
+button.red {
+    background-color: indianred;
+    color: white;
+}
+
+button.green {
+    background-color: mediumseagreen;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Muli', sans-serif;
+    color: indigo;
+}
+
+a {
+    text-decoration: none;
+    color: indigo;
+}
+
+nav {
+    display: block;
+    background-color: mediumpurple;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+nav img {
+    float: left;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    width: fit-content;
+}
+
+nav ul li a:hover {
+    background-color: indigo;
+}

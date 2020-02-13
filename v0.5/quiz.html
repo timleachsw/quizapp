@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzical Pursuit</title>
+    <link href="https://fonts.googleapis.com/css?family=Muli:600|Open+Sans:400,400i,600,600i&display=swap" rel="stylesheet">
+    <link href="quiz.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navbar -->
+<nav>
+    <img class="nav-logo" src="thinking.gif" width="50" alt="Thinking emoji" />
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+</nav>
+
+<!-- Header -->
+<h1>Quizzical Pursuit</h1>
+<div class="username-set">
+    <form>
+        <label>
+            What's your name?<br />
+            <input class="username-input" type="text" name="name" />
+        </label><br />
+    </form>
+    <button onclick="setUsername()">Submit</button>
+</div>
+
+<!-- This is where the questions will get loaded -->
+<div class="questions"></div>
+
+<!-- Scripts -->
+<script src="jquery-3.4.1.min.js"></script>
+<script src="username.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
