@@ -1,4 +1,6 @@
 const nQuestions = 3;
+const answered = new Array(nQuestions);
+let correct = 0;
 
 // Wait for the page to load
 window.onload = () => {
@@ -7,18 +9,47 @@ window.onload = () => {
         const questionButtons = document.querySelectorAll(`button.q${i + 1}`);
         for (let j = 0; j < questionButtons.length; j++) {
             const button = questionButtons[j];
-            // Is this a right or wrong answer?
-            if (button.classList.contains("right")) {
-                // Make it turn green on a click
-                button.onclick = () => {
-                    button.classList.add("green")
-                }
-            } else if (button.classList.contains("wrong")) {
-                // Make it turn red on a click
-                button.onclick = () => {
-                    button.classList.add("red")
-                }
+            button.onclick = () => {
+                answered[i] = j;
+                refresh();
             }
         }
     }
 };
+
+// Function to refresh the page view
+function refresh() {
+    // Recount correct answers every refresh
+    correct = 0;
+
+    for (let i = 0; i < nQuestions; i++) {
+        // Has this question been answered?
+        if (answered[i] !== undefined) {
+            const questionButtons = document.querySelectorAll(`button.q${i + 1}`);
+            // Loop through all the buttons
+            for (let j = 0; j < questionButtons.length; j++) {
+                const button = questionButtons[j];
+
+                // Disable the button, as this question has been answered
+                button.disabled = true;
+
+                // If this is the right answer, always make it green
+                if (button.classList.contains("right")) {
+                    button.classList.add("green");
+                    if (answered[i] === j) {
+                        // They selected this, so they got it right!
+                        correct++;
+                    }
+                } else {
+                    // If this was a selected wrong answer, mark it red
+                    if (answered[i] === j) {
+                        button.classList.add("red");
+                    }
+                }
+            }
+        }
+    }
+
+    // How many did we get right?
+    console.log(`You got ${correct}/${nQuestions} correct!`);
+}
